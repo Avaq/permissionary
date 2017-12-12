@@ -1,0 +1,29 @@
+{
+
+  "anyone": [
+    "content.read.homepage"
+  ],
+
+  "reader": [
+    "content.read.*",
+    "content.write.feedback"
+  ],
+
+  "writer": [
+    "content.write.*",
+    "content.read.feedback"
+  ],
+
+  "commenter": [
+    "content.write.comment"
+  ],
+
+  "manager": [
+    "user.create.{reader,writer,commenter}"
+  ],
+
+  "superadmin": [
+    "*"
+  ]
+
+}
