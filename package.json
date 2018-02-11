@@ -1,6 +1,6 @@
 {
   "name": "permissionary",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tiny and framework-agnostic role-based permission management using composition over inheritance",
   "main": "index.js",
   "scripts": {
