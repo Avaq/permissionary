@@ -4,6 +4,7 @@
 //. [![Dependencies](https://david-dm.org/Avaq/permissionary.svg)](https://david-dm.org/Avaq/permissionary)
 //. [![Build Status](https://travis-ci.org/Avaq/permissionary.svg?branch=master)](https://travis-ci.org/Avaq/permissionary)
 //. [![Code Coverage](https://codecov.io/gh/Avaq/permissionary/branch/master/graph/badge.svg)](https://codecov.io/gh/Avaq/permissionary)
+//. [![Greenkeeper badge](https://badges.greenkeeper.io/Avaq/permissionary.svg)](https://greenkeeper.io/)
 //.
 //. Tiny and framework-agnostic role-based permission management using
 //. a model of *composition* over inheritance.
