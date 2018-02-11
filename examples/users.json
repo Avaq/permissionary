@@ -1,0 +1,6 @@
+[
+  {"id": 1, "name": "Alice", "roles": ["superadmin"]},
+  {"id": 2, "name": "Bob", "roles": ["reader", "commenter"]},
+  {"id": 3, "name": "Caroline", "roles": ["manager"]},
+  {"id": 4, "name": "Dustin", "roles": ["reader", "writer"]}
+]

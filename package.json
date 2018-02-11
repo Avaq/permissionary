@@ -1,0 +1,42 @@
+{
+  "name": "permissionary",
+  "version": "0.0.0",
+  "description": "Tiny and framework-agnostic role-based permission management using composition over inheritance",
+  "main": "index.js",
+  "scripts": {
+    "doctest": "sanctuary-doctest",
+    "lint": "sanctuary-lint",
+    "release": "sanctuary-release",
+    "test": "npm run lint && sanctuary-test && npm run doctest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Avaq/permissionary.git"
+  },
+  "keywords": [
+    "composition",
+    "permission",
+    "permissions",
+    "role-based",
+    "roles"
+  ],
+  "files": [
+    "/index.js",
+    "/LICENSE",
+    "/package.json",
+    "/README.md"
+  ],
+  "author": "Aldwin Vlasblom <aldwin.vlasblom@gmail.com> (https://github.com/Avaq)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Avaq/permissionary/issues"
+  },
+  "homepage": "https://github.com/Avaq/permissionary#readme",
+  "dependencies": {
+    "micromatch": "^3.1.4"
+  },
+  "devDependencies": {
+    "codecov": "^3.0.0",
+    "sanctuary-scripts": "^1.0.1"
+  }
+}
