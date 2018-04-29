@@ -4,6 +4,7 @@
 [![Dependencies](https://david-dm.org/Avaq/permissionary.svg)](https://david-dm.org/Avaq/permissionary)
 [![Build Status](https://travis-ci.org/Avaq/permissionary.svg?branch=master)](https://travis-ci.org/Avaq/permissionary)
 [![Code Coverage](https://codecov.io/gh/Avaq/permissionary/branch/master/graph/badge.svg)](https://codecov.io/gh/Avaq/permissionary)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Avaq/permissionary.svg)](https://greenkeeper.io/)
 
 Tiny and framework-agnostic role-based permission management using
 a model of *composition* over inheritance.
@@ -40,7 +41,7 @@ assign both roles to that user.
 
 ## API
 
-<h4 name="checkPermission"><code><a href="https://github.com/Avaq/permissionary/blob/v0.1.0/index.js#L49">checkPermission :: StrMap (Array String) -⁠> Array String -⁠> String -⁠> Boolean</a></code></h4>
+#### <a name="checkPermission" href="https://github.com/Avaq/permissionary/blob/v0.0.0/index.js#L50">`checkPermission :: StrMap (Array String) -⁠> Array String -⁠> String -⁠> Boolean`</a>
 
 A [curried][5] function that takes three arguments and returns a Boolean:
 
@@ -85,7 +86,7 @@ canAlice('users.create');
 true
 ```
 
-<h4 name="findRoles"><code><a href="https://github.com/Avaq/permissionary/blob/v0.1.0/index.js#L112">findRoles :: StrMap (Array String) -⁠> String -⁠> Array String</a></code></h4>
+#### <a name="findRoles" href="https://github.com/Avaq/permissionary/blob/v0.0.0/index.js#L113">`findRoles :: StrMap (Array String) -⁠> String -⁠> Array String`</a>
 
 A [curried][5] function that takes two arguments and returns an Array
 of role names:
