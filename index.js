@@ -15,6 +15,7 @@
 //.
 //. ## Usage
 //.
+//. <!-- eslint-disable no-unused-vars -->
 //. ```js
 //. var {checkPermission, findRoles} = require('permissionary');
 //. ```
@@ -69,26 +70,26 @@ var hasProp = Object.prototype.hasOwnProperty;
 //. > var createVerifier = checkPermission({
 //. .   'content-reader': ['content.read', 'images.read'],
 //. .   'content-writer': ['content.write', 'images.upload'],
-//. .   'superadmin':     ['*']
-//. . });
+//. .   'superadmin': ['*']
+//. . })
 //.
 //. // Let's say our user Bob is a content-reader, and also a content-writer.
-//. > var canBob = createVerifier(['content-reader', 'content-writer']);
+//. > var canBob = createVerifier(['content-reader', 'content-writer'])
 //.
 //. // And Alice is an administrator.
-//. > var canAlice = createVerifier(['superadmin']);
+//. > var canAlice = createVerifier(['superadmin'])
 //.
 //. // Bob has this permission through his content-reader role.
-//. > canBob('content.read');
+//. > canBob('content.read')
 //. true
 //.
 //. // Bob does not have this permission.
-//. > canBob('users.create');
+//. > canBob('users.create')
 //. false
 //.
 //. // Alice, however, does. She has all permissions (even the ones
 //. // we haven't thought of yet).
-//. canAlice('users.create');
+//. canAlice('users.create')
 //. true
 //. ```
 function checkPermission(grants, roles, permission) {
@@ -126,8 +127,8 @@ function checkPermission(grants, roles, permission) {
 //. > var getRequiredRoles = findRoles({
 //. .   'content-reader': ['content.read', 'images.read'],
 //. .   'content-writer': ['content.write', 'images.upload'],
-//. .   'superadmin':     ['*']
-//. . });
+//. .   'superadmin': ['*']
+//. . })
 //.
 //. > getRequiredRoles('content.read')
 //. ['content-reader', 'superadmin']
