@@ -15,6 +15,7 @@ npm install --save permissionary
 
 ## Usage
 
+<!-- eslint-disable no-unused-vars -->
 ```js
 var {checkPermission, findRoles} = require('permissionary');
 ```
@@ -41,7 +42,7 @@ assign both roles to that user.
 
 ## API
 
-#### <a name="checkPermission" href="https://github.com/Avaq/permissionary/blob/v0.0.0/index.js#L50">`checkPermission :: StrMap (Array String) -⁠> Array String -⁠> String -⁠> Boolean`</a>
+#### <a name="checkPermission" href="https://github.com/Avaq/permissionary/blob/v0.1.1/index.js#L51">`checkPermission :: StrMap (Array String) -⁠> Array String -⁠> String -⁠> Boolean`</a>
 
 A [curried][5] function that takes three arguments and returns a Boolean:
 
@@ -63,30 +64,30 @@ the function to produce new functions, as shown in the example below:
 > var createVerifier = checkPermission({
 .   'content-reader': ['content.read', 'images.read'],
 .   'content-writer': ['content.write', 'images.upload'],
-.   'superadmin':     ['*']
-. });
+.   'superadmin': ['*']
+. })
 
 // Let's say our user Bob is a content-reader, and also a content-writer.
-> var canBob = createVerifier(['content-reader', 'content-writer']);
+> var canBob = createVerifier(['content-reader', 'content-writer'])
 
 // And Alice is an administrator.
-> var canAlice = createVerifier(['superadmin']);
+> var canAlice = createVerifier(['superadmin'])
 
 // Bob has this permission through his content-reader role.
-> canBob('content.read');
+> canBob('content.read')
 true
 
 // Bob does not have this permission.
-> canBob('users.create');
+> canBob('users.create')
 false
 
 // Alice, however, does. She has all permissions (even the ones
 // we haven't thought of yet).
-canAlice('users.create');
+canAlice('users.create')
 true
 ```
 
-#### <a name="findRoles" href="https://github.com/Avaq/permissionary/blob/v0.0.0/index.js#L113">`findRoles :: StrMap (Array String) -⁠> String -⁠> Array String`</a>
+#### <a name="findRoles" href="https://github.com/Avaq/permissionary/blob/v0.1.1/index.js#L114">`findRoles :: StrMap (Array String) -⁠> String -⁠> Array String`</a>
 
 A [curried][5] function that takes two arguments and returns an Array
 of role names:
@@ -102,8 +103,8 @@ to obtain a given permission?"
 > var getRequiredRoles = findRoles({
 .   'content-reader': ['content.read', 'images.read'],
 .   'content-writer': ['content.write', 'images.upload'],
-.   'superadmin':     ['*']
-. });
+.   'superadmin': ['*']
+. })
 
 > getRequiredRoles('content.read')
 ['content-reader', 'superadmin']
