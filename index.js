@@ -17,7 +17,7 @@
 //.
 //. <!-- eslint-disable no-unused-vars -->
 //. ```js
-//. var {checkPermission, findRoles} = require('permissionary');
+//. var {checkPermission, findRoles} = require ('permissionary');
 //. ```
 //.
 //. * [Basic](#checkPermission)
@@ -44,7 +44,7 @@
 
 'use strict';
 
-var micromatch = require('micromatch');
+var micromatch = require ('micromatch');
 
 var hasProp = Object.prototype.hasOwnProperty;
 
@@ -67,47 +67,47 @@ var hasProp = Object.prototype.hasOwnProperty;
 //. ```js
 //. // This defines a mapping from roles to permissions.
 //. // We can use wildcards to assign multiple permissions at once.
-//. > var createVerifier = checkPermission({
+//. > var createVerifier = checkPermission ({
 //. .   'content-reader': ['content.read', 'images.read'],
 //. .   'content-writer': ['content.write', 'images.upload'],
 //. .   'superadmin': ['*']
 //. . })
 //.
 //. // Let's say our user Bob is a content-reader, and also a content-writer.
-//. > var canBob = createVerifier(['content-reader', 'content-writer'])
+//. > var canBob = createVerifier (['content-reader', 'content-writer'])
 //.
 //. // And Alice is an administrator.
-//. > var canAlice = createVerifier(['superadmin'])
+//. > var canAlice = createVerifier (['superadmin'])
 //.
 //. // Bob has this permission through his content-reader role.
-//. > canBob('content.read')
+//. > canBob ('content.read')
 //. true
 //.
 //. // Bob does not have this permission.
-//. > canBob('users.create')
+//. > canBob ('users.create')
 //. false
 //.
 //. // Alice, however, does. She has all permissions (even the ones
 //. // we haven't thought of yet).
-//. canAlice('users.create')
+//. canAlice ('users.create')
 //. true
 //. ```
 function checkPermission(grants, roles, permission) {
 
   if (arguments.length === 1) {
-    return checkPermission.bind(this, grants);
+    return checkPermission.bind (this, grants);
   }
 
-  var permissions = roles.reduce(function(permissions, group) {
-    return hasProp.call(grants, group) ? permissions.concat(grants[group])
+  var permissions = roles.reduce (function(permissions, group) {
+    return hasProp.call (grants, group) ? permissions.concat (grants[group])
                                        : permissions;
   }, []);
 
   function hasPermission(permission) {
-    return micromatch.any(permission, permissions);
+    return micromatch.any (permission, permissions);
   }
 
-  return arguments.length === 2 ? hasPermission : hasPermission(permission);
+  return arguments.length === 2 ? hasPermission : hasPermission (permission);
 
 }
 
@@ -124,22 +124,22 @@ function checkPermission(grants, roles, permission) {
 //. to obtain a given permission?"
 //.
 //. ```js
-//. > var getRequiredRoles = findRoles({
+//. > var getRequiredRoles = findRoles ({
 //. .   'content-reader': ['content.read', 'images.read'],
 //. .   'content-writer': ['content.write', 'images.upload'],
 //. .   'superadmin': ['*']
 //. . })
 //.
-//. > getRequiredRoles('content.read')
+//. > getRequiredRoles ('content.read')
 //. ['content-reader', 'superadmin']
 //. ```
 function findRoles(grants, permission) {
   if (arguments.length === 1) {
-    return findRoles.bind(this, grants);
+    return findRoles.bind (this, grants);
   }
 
-  return Object.keys(grants).filter(function(role) {
-    return micromatch.any(permission, grants[role]);
+  return (Object.keys (grants)).filter (function(role) {
+    return micromatch.any (permission, grants[role]);
   });
 }
 
