@@ -89,7 +89,7 @@ var hasProp = Object.prototype.hasOwnProperty;
 //.
 //. // Alice, however, does. She has all permissions (even the ones
 //. // we haven't thought of yet).
-//. canAlice ('users.create')
+//. > canAlice ('users.create')
 //. true
 //. ```
 function checkPermission(grants, roles, permission) {
