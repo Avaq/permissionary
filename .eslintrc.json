@@ -7,14 +7,9 @@
   "overrides": [
     {
       "files": ["*.md"],
-      "plugins": ["markdown"],
-      "env": {"es6": true},
       "globals": {"checkPermission": false, "findRoles": false},
       "rules": {
-        "strict": ["off"],
-        "no-extra-semi": ["off"],
-        "semi-style": ["off"],
-        "semi": ["off"]
+        "no-unused-vars": ["error", {"varsIgnorePattern": "^(checkPermission|findRoles)$"}]
       }
     }
   ]

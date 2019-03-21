@@ -15,7 +15,6 @@
 //.
 //. ## Usage
 //.
-//. <!-- eslint-disable no-unused-vars -->
 //. ```js
 //. var {checkPermission, findRoles} = require ('permissionary');
 //. ```
