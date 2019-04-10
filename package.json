@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/Avaq/permissionary#readme",
   "dependencies": {
-    "micromatch": "^3.1.4"
+    "micromatch": "^4.0.1"
   },
   "devDependencies": {
     "codecov": "^3.0.0",
