@@ -36,7 +36,7 @@
     "micromatch": "^3.1.4"
   },
   "devDependencies": {
-    "codecov": "^3.0.0",
+    "codecov": "^3.7.0",
     "sanctuary-scripts": "^3.2.0"
   }
 }
